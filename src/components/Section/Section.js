@@ -13,4 +13,9 @@ const Section = ({ title, children }) => {
 Section.propTypes = {
   title: PropTypes.string.isRequired,
 };
+
+Section.defaultProps = {
+  title: "Заголовок",
+};
+
 export default Section;

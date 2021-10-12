@@ -1,5 +1,4 @@
 import { Component } from "react";
-import PropTypes from "prop-types";
 
 import Statistics from "./components/Statistics";
 import FeedbackOptions from "./components/FeedbackOptions";
@@ -9,25 +8,17 @@ import options from "./components/FeedbackOptions/button.json";
 import s from "./App.module.css";
 
 class App extends Component {
-  static defaultProps = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
-
-  static propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  };
-
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
 
-  onLeaveFeedback = (name) => {
+  onLeaveFeedback = ({ name }) => {
+    // this.setState((prevState) => ({
+    //     [name]: prevState.name + 1,
+    //   }))
+
     if (name === "Good")
       this.setState((prevState) => ({
         good: prevState.good + 1,
